@@ -172,6 +172,7 @@ dtb-$(CONFIG_ARCH_MVEBU) +=			\
 	armada-3720-uDPU.dtb			\
 	armada-7040-db-nand.dtb			\
 	armada-7040-db.dtb			\
+	armada-7040-rb5009.dtb			\
 	armada-8040-clearfog-gt-8k.dtb		\
 	armada-8040-db.dtb			\
 	armada-8040-mcbin.dtb			\

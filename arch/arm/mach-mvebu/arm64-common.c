@@ -62,9 +62,13 @@ __weak int dram_init_banksize(void)
 __weak int dram_init(void)
 {
 	if (IS_ENABLED(CONFIG_ARMADA_8K)) {
-		gd->ram_size = a8k_dram_scan_ap_sz();
-		if (gd->ram_size != 0)
-			return 0;
+		if (of_machine_is_compatible("mikrotik,rb5009"))
+			return fdtdec_setup_mem_size_base();
+		else {
+			gd->ram_size = a8k_dram_scan_ap_sz();
+			if (gd->ram_size != 0)
+				return 0;
+		}
 	}
 
 	if (IS_ENABLED(CONFIG_ARMADA_3700))
